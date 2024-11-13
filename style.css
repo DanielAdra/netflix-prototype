@@ -1,11 +1,11 @@
-/* Reset some basic styles */
+/* Basic reset for margins, paddings, and box sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and overall layout */
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -22,12 +22,14 @@ body {
     align-items: center;
 }
 
+/* Styling for nav links */
 .nav-links {
     list-style-type: none;
     display: flex;
     gap: 20px;
 }
 
+/* Individual nav links */
 .nav-links li {
     display: inline;
 }
@@ -37,9 +39,23 @@ body {
     color: #fff;
 }
 
-/* Hero Section */
+/* Hamburger menu for mobile view */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+}
+
+/* Hero Section with background image*/
 .hero {
-    background-image: url('multimedia-assets/netflix.gif');
+    background-image: url('multimedia-assets/netflix.jpg');
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -54,6 +70,7 @@ body {
     font-size: 3rem;
 }
 
+/* Styling for the main call-to-action button */
 .cta-button {
     background-color: #e50914;
     color: white;
@@ -74,12 +91,14 @@ body {
     text-align: center;
 }
 
+/* 4-column grid layout */
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
+/* Individual content item */
 .content-item {
     position: relative;
     overflow: hidden;
@@ -107,14 +126,50 @@ body {
     opacity: 0; /* Hide the title initially */
 }
 
-.content-item:hover {
-    transform: scale(1.05);
+/* Contact Form Styling */
+#contact {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.content-item:hover img {
-    opacity: 0.6; /* Darken the image on hover */
+#contact-form {
+    max-width: 400px;
+    margin: auto;
 }
 
-.content-item:hover h4 {
-    opacity: 1; /* Show the title on hover */
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #222;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+/* Responsive grid layout for smaller screens */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Display the hamburger menu and hide nav links */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    /* Display nav links when navbar is active */
+    .navbar.active .nav-links {
+        display: flex;
+    }
 }

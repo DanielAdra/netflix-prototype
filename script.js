@@ -1,20 +1,33 @@
 $(document).ready(function() {
-    // This makes the button interactive. When clicked, it shows an alert
+    // Message that pops up when the "Get Started" button is clicked
     $('.cta-button').click(function() {
         alert("Welcome to Netflix Prototype! Let's start exploring.");
     });
 
-    // Adds a hover effect on content items to change their background colour and show title
+    // Toggle for showing/hiding the navbar on mobile view
+    $('.hamburger').click(function() {
+        $('.navbar').toggleClass('active');
+    });
+
+    // Display message after the contact form is submitted
+    $('#contact-form').submit(function(event) {
+        event.preventDefault(); // Prevents the page from reloading after form submission
+        alert("Thank you for contacting us! We'll get back to you soon.");
+    });
+
+    // Effects when hovering over content items
     $('.content-item').hover(
         function() {
-            $(this).css('transform', 'scale(1.05)');  // Slightly zoom in on hover
-            $(this).children('img').css('opacity', '0.6');  // Darken image on hover
-            $(this).children('h4').css('opacity', '1');  // Show the title on hover
+            // Slightly enlarge the item and dim the image
+            $(this).css('transform', 'scale(1.05)');
+            $(this).children('img').css('opacity', '0.6');
+            $(this).children('h4').css('opacity', '1');
         }, 
         function() {
-            $(this).css('transform', 'scale(1)');  // Reset scale
-            $(this).children('img').css('opacity', '1');  // Reset image opacity
-            $(this).children('h4').css('opacity', '0');  // Hide the title again
+            // Return the item to its original state
+            $(this).css('transform', 'scale(1)');
+            $(this).children('img').css('opacity', '1');
+            $(this).children('h4').css('opacity', '0');
         }
     );
 });
