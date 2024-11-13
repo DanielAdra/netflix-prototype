@@ -1,0 +1,120 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('multimedia-assets/netflix.gif');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 3rem;
+}
+
+.cta-button {
+    background-color: #e50914;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #b20710;
+}
+
+/* Content Grid */
+.content-grid {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.content-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.content-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.content-item h4 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Hide the title initially */
+}
+
+.content-item:hover {
+    transform: scale(1.05);
+}
+
+.content-item:hover img {
+    opacity: 0.6; /* Darken the image on hover */
+}
+
+.content-item:hover h4 {
+    opacity: 1; /* Show the title on hover */
+}
